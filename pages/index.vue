@@ -49,6 +49,8 @@
                     ></v-text-field>
                   </ValidationProvider>
                   <v-btn
+                    to="/dashboard"
+                    nuxt
                     depressed
                     rounded
                     x-large
@@ -73,6 +75,11 @@ export default {
         email: null,
         password: null
       }
+    }
+  },
+  head() {
+    return {
+      title: 'Sign In'
     }
   },
   layout() {
