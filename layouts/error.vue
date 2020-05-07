@@ -1,20 +1,28 @@
 <template>
   <v-app app>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
-    <h1 v-else>
-      {{ otherError }}
-    </h1>
-    <NuxtLink to="/dashboard">
-      Home page
-    </NuxtLink>
+    <v-content>
+      <v-container>
+        <v-row class="auth-container" justify="center" align="center">
+          <v-col md="6">
+            <h1 v-if="error.statusCode === 404">
+              {{ pageNotFound }}
+            </h1>
+            <h1 v-else>
+              {{ otherError }}
+            </h1>
+            <v-btn depressed color="primary" large to="/dashboard">
+              Home page
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-content>
   </v-app>
 </template>
 
 <script>
 export default {
-  layout: 'empty',
+  layout: 'auth',
   props: {
     error: {
       type: Object,
@@ -39,6 +47,6 @@ export default {
 
 <style scoped>
 h1 {
-  font-size: 20px;
+  font-size: 70px;
 }
 </style>

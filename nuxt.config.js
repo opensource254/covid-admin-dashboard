@@ -7,6 +7,9 @@ export default {
     host: 'localhost',
     timing: false
   },
+  router: {
+    middleware: ['auth']
+  },
   /*
    ** Headers of the page
    */
@@ -47,12 +50,25 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/dotenv', '@nuxtjs/auth'],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /**
+   * -----------------
+   * Authentication
+   * ------------------
+   */
+  auth: {
+    redirect: {
+      login: '/',
+      logout: '/',
+      callback: '/login',
+      home: '/'
+    }
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
