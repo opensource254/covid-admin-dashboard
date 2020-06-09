@@ -43,7 +43,7 @@ export default {
         })
         return true
       } catch (error) {
-        console.warn(error)
+        //
       }
     }
   }

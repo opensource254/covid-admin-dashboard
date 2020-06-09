@@ -49,7 +49,7 @@ export default {
           this.alert
         )
       } catch (error) {
-        console.warn(error)
+        //
       }
     }
   }
