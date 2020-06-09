@@ -1,5 +1,5 @@
 .auth-container {
-    height: 96.6vh!important;
+    height: 96.6vh !important;
 }
 
 .first-background {
@@ -7,4 +7,12 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+.page-enter-active,
+.page-leave-active {
+    transition: ease-in-out 0.5s;
+}
+.page-enter,
+.page-leave-to {
+    opacity: 0;
 }
