@@ -74,7 +74,9 @@ export default {
           login: { url: '/api/v1/auth/login', method: 'post' },
           logout: { url: '/api/v1/auth/logout', method: 'post' },
           user: { url: '/api/v1/home', method: 'get', propertyName: 'user' }
-        }
+        },
+        tokenRequired: false,
+        tokenType: false
       }
     }
   },
