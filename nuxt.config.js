@@ -38,7 +38,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vee-validate'],
+  plugins: ['~/plugins/vee-validate', '~plugins/axios'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -67,6 +67,15 @@ export default {
       logout: '/',
       callback: '/login',
       home: '/'
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/v1/auth/login', method: 'post' },
+          logout: { url: '/api/v1/auth/logout', method: 'post' },
+          user: { url: '/api/v1/home', method: 'get', propertyName: 'user' }
+        }
+      }
     }
   },
   /*

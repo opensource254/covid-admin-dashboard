@@ -14,7 +14,7 @@
 
             <v-card-text>
               <ValidationObserver v-slot="{ valid }">
-                <v-form>
+                <v-form @submit.prevent="login">
                   <ValidationProvider
                     v-slot="{ errors }"
                     rules="required|email"
@@ -49,8 +49,7 @@
                     ></v-text-field>
                   </ValidationProvider>
                   <v-btn
-                    to="/dashboard"
-                    nuxt
+                    type="submit"
                     depressed
                     rounded
                     x-large
@@ -75,6 +74,15 @@ export default {
       credentials: {
         email: null,
         password: null
+      }
+    }
+  },
+  methods: {
+    async login() {
+      try {
+        await this.$auth.loginWith('local', { data: this.credentials })
+      } catch (err) {
+        return err
       }
     }
   },
