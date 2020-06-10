@@ -67,6 +67,9 @@
 
     <v-content>
       <v-container fluid>
+        <v-alert v-if="$store.state.serverError.status" type="error" prominent>
+          {{ $store.state.serverError.message }}
+        </v-alert>
         <nuxt />
       </v-container>
     </v-content>

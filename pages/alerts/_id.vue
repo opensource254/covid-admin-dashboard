@@ -12,14 +12,22 @@
           rounded
           outlined
           label="Title"
+          :loading="$store.state.loading"
         ></v-text-field>
         <v-textarea
           v-model="alert.detail"
           rounded
           outlined
           label="Detail"
+          :loading="$store.state.loading"
         ></v-textarea>
-        <v-btn type="submit" large rounded depressed color="primary"
+        <v-btn
+          :loading="$store.state.loading"
+          type="submit"
+          large
+          rounded
+          depressed
+          color="primary"
           >Update Alert</v-btn
         >
       </v-form>
@@ -43,13 +51,17 @@ export default {
   },
   methods: {
     async updateAlert() {
+      this.$store.commit('loading', true)
       try {
         await this.$axios.put(
           `/api/v1/alert/${this.$route.params.id}`,
           this.alert
         )
+        this.$store.commit('loading', false)
+        this.$store.commit('hideError')
       } catch (error) {
-        //
+        this.$store.commit('loading', false)
+        this.$store.commit('showError', error)
       }
     }
   }

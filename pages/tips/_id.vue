@@ -12,14 +12,22 @@
           rounded
           outlined
           label="Title"
+          :loading="$store.state.loading"
         ></v-text-field>
         <v-textarea
           v-model="tip.detail"
           rounded
           outlined
           label="Detail"
+          :loading="$store.state.loading"
         ></v-textarea>
-        <v-btn type="submit" large rounded depressed color="primary"
+        <v-btn
+          :loading="$store.state.loading"
+          type="submit"
+          large
+          rounded
+          depressed
+          color="primary"
           >Update tip</v-btn
         >
       </v-form>
@@ -43,10 +51,14 @@ export default {
   },
   methods: {
     async updateTip() {
+      this.$store.commit('loading', true)
       try {
         await this.$axios.put(`/api/v1/tip/${this.$route.params.id}`, this.tip)
+        this.$store.commit('loading', false)
+        this.$store.commit('hideError')
       } catch (error) {
-        //
+        this.$store.commit('loading', false)
+        this.$store.commit('showError', error)
       }
     }
   }
