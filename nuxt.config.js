@@ -62,11 +62,12 @@ export default {
    * ------------------
    */
   auth: {
+    cookie: false,
     redirect: {
       login: '/',
       logout: '/',
-      callback: '/login',
-      home: '/'
+      callback: '/',
+      home: '/dashboard'
     },
     strategies: {
       local: {

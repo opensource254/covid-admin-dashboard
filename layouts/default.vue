@@ -10,7 +10,7 @@
       <v-list nav shaped>
         <v-list-item to="/dashboard">
           <v-list-item-icon>
-            <v-icon>mdi-home</v-icon>
+            <v-icon>mdi-home-outline</v-icon>
           </v-list-item-icon>
           <v-list-item-content
             ><v-list-item-title
@@ -28,7 +28,7 @@
         </v-list-item>
         <v-list-item to="/users">
           <v-list-item-icon>
-            <v-icon>mdi-account</v-icon>
+            <v-icon>mdi-account-outline</v-icon>
           </v-list-item-icon>
           <v-list-item-content
             ><v-list-item-title>Users</v-list-item-title></v-list-item-content
@@ -42,7 +42,23 @@
             ><v-list-item-title>Alerts</v-list-item-title></v-list-item-content
           >
         </v-list-item>
+
+        <v-list-item to="/tips">
+          <v-list-item-icon>
+            <v-icon>mdi-information-outline</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content
+            ><v-list-item-title>Tips</v-list-item-title></v-list-item-content
+          >
+        </v-list-item>
       </v-list>
+      <template v-slot:append>
+        <div class="pa-2">
+          <v-btn block depressed color="error" @click="$auth.logout()"
+            >Logout</v-btn
+          >
+        </div>
+      </template>
     </v-navigation-drawer>
 
     <v-app-bar clipped-left app>
@@ -54,7 +70,5 @@
         <nuxt />
       </v-container>
     </v-content>
-
-    <v-footer app> </v-footer>
   </v-app>
 </template>

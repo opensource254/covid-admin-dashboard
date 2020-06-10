@@ -1,26 +1,26 @@
 <template>
   <v-row justify="center">
     <v-col cols="12">
-      <v-btn large icon to="/alerts">
+      <v-btn to="/tips" large icon>
         <v-icon>mdi-arrow-left</v-icon>
       </v-btn>
     </v-col>
     <v-col md="8">
-      <v-form @submit.prevent="updateAlert">
+      <v-form @submit.prevent="createAlert">
         <v-text-field
-          v-model="alert.title"
+          v-model="title"
           rounded
           outlined
           label="Title"
         ></v-text-field>
         <v-textarea
-          v-model="alert.detail"
+          v-model="detail"
           rounded
           outlined
           label="Detail"
         ></v-textarea>
         <v-btn type="submit" large rounded depressed color="primary"
-          >Update Alert</v-btn
+          >Create TIP</v-btn
         >
       </v-form>
     </v-col>
@@ -28,26 +28,20 @@
 </template>
 <script>
 export default {
-  async fetch() {
-    try {
-      const response = await this.$axios.get(
-        `/api/v1/alert/${this.$route.params.id}`
-      )
-      this.alert = response.data
-    } catch (error) {}
-  },
   data() {
     return {
-      alert: {}
+      title: null,
+      detail: null
     }
   },
   methods: {
-    async updateAlert() {
+    async createAlert() {
       try {
-        await this.$axios.put(
-          `/api/v1/alert/${this.$route.params.id}`,
-          this.alert
-        )
+        await this.$axios.post('/api/v1/tip', {
+          title: this.title,
+          detail: this.detail
+        })
+        return true
       } catch (error) {
         //
       }
