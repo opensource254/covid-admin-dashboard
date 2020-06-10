@@ -4,6 +4,12 @@
       <v-btn to="/alerts/create">Create Alert</v-btn>
     </v-col>
     <v-col cols="10" md="6">
+      <v-skeleton-loader
+        v-if="$fetchState.pending"
+        class="mx-auto"
+        type="list-item-three-line"
+      ></v-skeleton-loader>
+
       <v-card
         v-for="(alert, index) in alerts"
         :key="index"

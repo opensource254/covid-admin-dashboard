@@ -4,6 +4,12 @@
       <v-btn to="/tips/create">Create tip</v-btn>
     </v-col>
     <v-col cols="10" md="6">
+      <v-skeleton-loader
+        v-if="$fetchState.pending"
+        class="mx-auto"
+        type="list-item-three-line"
+      ></v-skeleton-loader>
+
       <v-card
         v-for="(tip, index) in tips"
         :key="index"

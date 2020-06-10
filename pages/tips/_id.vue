@@ -6,7 +6,7 @@
       </v-btn>
     </v-col>
     <v-col md="8">
-      <v-form @submit.prevent="updatetip">
+      <v-form @submit.prevent="updateTip">
         <v-text-field
           v-model="tip.title"
           rounded
