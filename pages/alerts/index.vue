@@ -1,7 +1,9 @@
 <template>
   <v-row justify="center">
-    <v-col cols="12">
-      <v-btn to="/alerts/create">Create Alert</v-btn>
+    <v-col cols="12" md="8">
+      <v-btn rounded large block color="accent" depressed to="/alerts/create"
+        >Create Alert</v-btn
+      >
     </v-col>
     <v-col cols="10" md="6">
       <v-skeleton-loader

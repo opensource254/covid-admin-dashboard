@@ -1,7 +1,9 @@
 <template>
   <v-row justify="center">
-    <v-col cols="12">
-      <v-btn to="/tips/create">Create tip</v-btn>
+    <v-col cols="12" md="8">
+      <v-btn large rounded depressed block color="accent" to="/tips/create"
+        >Create tip</v-btn
+      >
     </v-col>
     <v-col cols="10" md="6">
       <v-skeleton-loader

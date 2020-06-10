@@ -1,8 +1,11 @@
 <template>
   <v-row justify="center">
     <v-col cols="12">
-      <v-btn large icon to="/alerts">
+      <v-btn color="accent" large icon to="/alerts">
         <v-icon>mdi-arrow-left</v-icon>
+      </v-btn>
+      <v-btn large icon color="error">
+        <v-icon>mdi-delete-outline</v-icon>
       </v-btn>
     </v-col>
     <v-col md="8">
