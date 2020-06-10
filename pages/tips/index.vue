@@ -10,6 +10,10 @@
         type="list-item-three-line"
       ></v-skeleton-loader>
 
+      <v-alert v-else outlined type="error">
+        We are not able to get Tips 😢
+      </v-alert>
+
       <v-card
         v-for="(tip, index) in tips"
         :key="index"
