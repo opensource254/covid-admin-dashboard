@@ -7,6 +7,19 @@
       app
       clipped
     >
+      <v-card flat>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title
+              >{{ $auth.user.firstname }} {{ $auth.user.lastname }}
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              {{ $auth.user.email }}
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+      </v-card>
+      <v-divider></v-divider>
       <v-list nav shaped>
         <v-list-item to="/dashboard">
           <v-list-item-icon>
@@ -24,6 +37,16 @@
           </v-list-item-icon>
           <v-list-item-content
             ><v-list-item-title>Doctors</v-list-item-title></v-list-item-content
+          >
+        </v-list-item>
+        <v-list-item to="/hospitals">
+          <v-list-item-icon>
+            <v-icon>mdi-hospital-box-outline</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content
+            ><v-list-item-title
+              >Health Centers</v-list-item-title
+            ></v-list-item-content
           >
         </v-list-item>
         <v-list-item to="/users">
