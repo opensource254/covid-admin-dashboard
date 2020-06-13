@@ -79,10 +79,9 @@ export default {
           },
           logout: { url: '/api/v1/auth/logout', method: 'post' },
           user: { url: '/api/v1/home', method: 'get', propertyName: 'user' }
-        }
-        // TODO enable this inproduction to use cookie flow
-        // tokenRequired: false,
-        // tokenType: false
+        },
+        tokenRequired: false,
+        tokenType: false
       }
     }
   },
