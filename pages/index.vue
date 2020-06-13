@@ -10,7 +10,7 @@
           >
             {{ $store.state.serverError.message }}
           </v-alert>
-          <v-card ripple :loading="$store.state.loading">
+          <v-card :loading="$store.state.loading">
             <div class="text-center">
               <nuxt-link class="mt-n12" to="/">
                 <v-avatar height="100" width="100">
