@@ -1,24 +1,26 @@
 <template>
   <v-app>
     <v-navigation-drawer
-      mobile-break-point="sm"
+      v-model="drawer"
+      mobile-breakpoint="sm"
       :permanent="$vuetify.breakpoint.smAndUp"
       :temporary="!$vuetify.breakpoint.smAndUp"
       app
       clipped
     >
-      <v-card flat>
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title
-              >{{ $auth.user.firstname }} {{ $auth.user.lastname }}
-            </v-list-item-title>
-            <v-list-item-subtitle>
-              {{ $auth.user.email }}
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-      </v-card>
+      <v-list-item>
+        <v-list-item-avatar>
+          <v-avatar color="primary"> </v-avatar>
+        </v-list-item-avatar>
+        <v-list-item-content>
+          <v-list-item-title
+            >{{ $auth.user.firstname }} {{ $auth.user.lastname }}
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            {{ $auth.user.email }}
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
       <v-divider></v-divider>
       <v-list nav shaped>
         <v-list-item to="/dashboard">
@@ -85,7 +87,13 @@
     </v-navigation-drawer>
 
     <v-app-bar clipped-left app>
-      <v-toolbar-title>Covid19Kenya</v-toolbar-title>
+      <v-app-bar-nav-icon
+        :hidden="$vuetify.breakpoint.smAndUp"
+        @click="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+      <v-toolbar-title :hidden="!$vuetify.breakpoint.smAndUp"
+        >Covid19Kenya</v-toolbar-title
+      >
     </v-app-bar>
 
     <v-content>
@@ -98,3 +106,12 @@
     </v-content>
   </v-app>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      drawer: false
+    }
+  }
+}
+</script>
