@@ -12,7 +12,7 @@
           </v-alert>
           <v-card :loading="$store.state.loading">
             <div class="text-center">
-              <nuxt-link class="mt-n12" to="/">
+              <nuxt-link class="mt-n16" to="/">
                 <v-avatar height="100" width="100">
                   <img contain src="/icon.png" />
                 </v-avatar>
