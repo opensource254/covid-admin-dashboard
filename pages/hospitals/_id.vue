@@ -96,6 +96,7 @@ export default {
   },
   data() {
     return {
+      deleteConfirmation: false,
       hospital: {}
     }
   },
