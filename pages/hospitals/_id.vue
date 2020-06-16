@@ -78,7 +78,7 @@
           rounded
           depressed
           color="primary"
-          >Create hospital</v-btn
+          >Update hospital</v-btn
         >
       </v-form>
     </v-col>
