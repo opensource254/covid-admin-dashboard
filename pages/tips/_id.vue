@@ -98,10 +98,7 @@ export default {
     async deleteTip() {
       this.$store.commit('loading', true)
       try {
-        await this.$axios.delete(
-          `/api/v1/tip/${this.$route.params.id}`,
-          this.tip
-        )
+        await this.$axios.delete(`/api/v1/tip/${this.$route.params.id}`)
         this.$router.push('/tips')
         this.$store.commit('loading', false)
         this.$store.commit('hideError')
