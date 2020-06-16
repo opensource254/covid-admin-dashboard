@@ -8,7 +8,7 @@
       app
       clipped
     >
-      <v-list-item>
+      <v-list-item to="/profile">
         <v-list-item-avatar>
           <v-avatar color="primary"> </v-avatar>
         </v-list-item-avatar>
