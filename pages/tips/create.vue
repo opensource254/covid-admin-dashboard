@@ -59,6 +59,11 @@ export default {
         this.$store.commit('showError', error)
       }
     }
+  },
+  head() {
+    return {
+      title: 'Create tip'
+    }
   }
 }
 </script>

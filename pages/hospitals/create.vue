@@ -79,6 +79,11 @@ export default {
         this.$store.commit('showError', error)
       }
     }
+  },
+  head() {
+    return {
+      title: 'Add new health center'
+    }
   }
 }
 </script>

@@ -107,6 +107,11 @@ export default {
         this.$store.commit('showError', error)
       }
     }
+  },
+  head() {
+    return {
+      title: this.tip.title
+    }
   }
 }
 </script>

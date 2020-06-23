@@ -55,6 +55,11 @@ export default {
     return {
       hospitals: []
     }
+  },
+  head() {
+    return {
+      title: 'Health Centers'
+    }
   }
 }
 </script>

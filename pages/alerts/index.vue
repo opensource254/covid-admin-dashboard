@@ -48,6 +48,11 @@ export default {
     return {
       alerts: []
     }
+  },
+  head() {
+    return {
+      title: 'Alerts'
+    }
   }
 }
 </script>

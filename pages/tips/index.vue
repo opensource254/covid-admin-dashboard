@@ -48,6 +48,11 @@ export default {
     return {
       tips: []
     }
+  },
+  head() {
+    return {
+      title: 'Tips'
+    }
   }
 }
 </script>
