@@ -5,9 +5,14 @@
         {{ pageNotFound }}
       </h1>
       <h1 v-else>
-        {{ otherError }}
+        {{ error.message }}
       </h1>
-      <v-btn depressed color="primary" large to="/dashboard">
+      <v-btn
+        depressed
+        color="primary"
+        large
+        :to="$auth.loggedIn ? '/dashboard' : '/'"
+      >
         Home page
       </v-btn>
     </v-col>
@@ -16,6 +21,9 @@
 
 <script>
 export default {
+  layout({ store }) {
+    return store.state.auth.loggedIn ? 'default' : 'auth'
+  },
   props: {
     error: {
       type: Object,
