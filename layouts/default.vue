@@ -33,6 +33,16 @@
             ></v-list-item-content
           >
         </v-list-item>
+        <v-list-item to="/geofence">
+          <v-list-item-icon>
+            <v-icon>mdi-map-marker-radius</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content
+            ><v-list-item-title
+              >Geofence</v-list-item-title
+            ></v-list-item-content
+          >
+        </v-list-item>
         <v-list-item to="/doctors">
           <v-list-item-icon>
             <v-icon>mdi-doctor</v-icon>
@@ -96,14 +106,14 @@
       >
     </v-app-bar>
 
-    <v-content>
+    <v-main>
       <v-container fluid>
         <v-alert v-if="$store.state.serverError.status" type="error" prominent>
           {{ $store.state.serverError.message }}
         </v-alert>
         <nuxt />
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 <script>

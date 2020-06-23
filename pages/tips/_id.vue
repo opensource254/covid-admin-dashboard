@@ -112,6 +112,9 @@ export default {
     return {
       title: this.tip.title
     }
+  },
+  validate({ params }) {
+    return /^\d+$/.test(params.id)
   }
 }
 </script>

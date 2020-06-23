@@ -69,6 +69,9 @@
 </template>
 <script>
 export default {
+  validate({ params }) {
+    return /^\d+$/.test(params.id)
+  },
   async fetch() {
     try {
       const response = await this.$axios.get(

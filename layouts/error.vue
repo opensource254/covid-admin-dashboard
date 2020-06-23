@@ -1,28 +1,21 @@
 <template>
-  <v-app app>
-    <v-content>
-      <v-container>
-        <v-row class="auth-container" justify="center" align="center">
-          <v-col md="6">
-            <h1 v-if="error.statusCode === 404">
-              {{ pageNotFound }}
-            </h1>
-            <h1 v-else>
-              {{ otherError }}
-            </h1>
-            <v-btn depressed color="primary" large to="/dashboard">
-              Home page
-            </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-content>
-  </v-app>
+  <v-row class="auth-container" justify="center" align="center">
+    <v-col md="6">
+      <h1 v-if="error.statusCode === 404">
+        {{ pageNotFound }}
+      </h1>
+      <h1 v-else>
+        {{ otherError }}
+      </h1>
+      <v-btn depressed color="primary" large to="/dashboard">
+        Home page
+      </v-btn>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
 export default {
-  layout: 'auth',
   props: {
     error: {
       type: Object,
