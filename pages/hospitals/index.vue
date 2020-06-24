@@ -38,6 +38,10 @@
           </v-list-item-action>
         </v-list-item>
       </v-card>
+      <v-pagination
+        v-model="current_page"
+        :length="hospitalCount"
+      ></v-pagination>
     </v-col>
   </v-row>
 </template>
@@ -45,16 +49,27 @@
 export default {
   async fetch() {
     try {
-      const response = await this.$axios.get('/api/v1/hospitals')
+      const response = await this.$axios.get(
+        `/api/v1/hospitals?count=15&page=${this.current_page}`
+      )
       this.hospitals = response.data.data
+      this.hospitalCount = parseInt(response.data.last_page)
     } catch (err) {
       //
     }
   },
   data() {
     return {
-      hospitals: []
+      hospitals: [],
+      hospitalCount: 0,
+      current_page: 1
     }
+  },
+  watch: {
+    current_page(latest, prev) {
+      this.$router.push(`/hospitals/?page=${latest}`)
+    },
+    '$route.query': '$fetch'
   },
   head() {
     return {
